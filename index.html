@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试jq插件</title>
+</head>
+<body>
+<p>你好</p>
+<span>我很好</span>
+</body>
+<script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="./test.js"></script>
+<script type="text/javascript">
+	//调用
+        //调用者覆盖 插件暴露的共公方法
+        $.fn.highLight.format = function (txt) {
+            return "<em>" + txt + "</em>"
+        }
+        $(function () {
+            $("p").highLight(0); //调用自定义 高亮插件
+        });
+</script>
+</html>
